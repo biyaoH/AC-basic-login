@@ -5,5 +5,9 @@
     <input class="form-control m-2" name="password" type="password" placeholder="Password">
     <button type="submit" class="btn btn-primary mt-4">Sign in</button>
   </form>
-
+  {{#if message}}
+  <div class="alert alert-warning mt-3" role="alert">
+    <span>WUsername/Password 錯誤，請重新輸入</span>
+  </div>
+  {{/if}}
 </div>

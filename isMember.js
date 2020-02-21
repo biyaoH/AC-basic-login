@@ -37,9 +37,7 @@ function isMember(emailUser, passwordUser) {
     }
   })
 
-  if (nameUser === '') return false
-
-  return nameUser
+  return nameUser === '' ? false : nameUser
 }
 
 module.exports = isMember

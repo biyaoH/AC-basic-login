@@ -20,10 +20,11 @@ app.post('/', (req, res) => {
 
   const emailUser = req.body.email
   const passwordUser = req.body.password
+  const result = isMember(emailUser, passwordUser)
 
   console.log('result:', isMember(emailUser, passwordUser))
 
-  res.render('index')
+  result ? res.render('welcome', { result }) : res.render('index', { message: true })
 })
 
 app.listen(port, () => {
