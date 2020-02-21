@@ -2,6 +2,7 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 const app = express()
 const bodyParser = require('body-parser')
+const isMember = require('./isMember')
 
 const port = 3000
 
@@ -16,7 +17,12 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  console.log('req.body', req.body)
+
+  const emailUser = req.body.email
+  const passwordUser = req.body.password
+
+  console.log('result:', isMember(emailUser, passwordUser))
+
   res.render('index')
 })
 
